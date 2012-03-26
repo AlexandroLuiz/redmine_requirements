@@ -1,0 +1,68 @@
+pt-BR:
+
+
+  AdditionalRequirement: Requisito Adicional
+  FunctionalRequirement: Requisito Funcional
+  NonFunctionalRequirement: Requisito Não Funcional
+  AdditionalRequirements: Requisitos Adicionais
+  FunctionalRequirements: Requisitos Funcionais
+  functional_requirements: Requisitos Funcionais
+  Categories: Categorias
+  Category: Categoria
+  Categorys: Categorias
+  NonFunctionalRequirements: Requisitos Não Funcionais
+  permission_view_functional_requirements: Ver Requisitos Funcionais
+  permission_view_additional_requirements: Ver Requisitos Adicionais
+  permission_view_non_functional_requirements: Ver Requisitos Não Funcionais
+  permission_create_edit_functional_requirements: Criar e Editar Requisitos Funcionais
+  permission_create_edit_additional_requirements: Criar e Editar Requisitos Adicionais
+  permission_create_edit_non_functional_requirements: Criar e Editar Requisitos Não Funcionais
+  permission_destroy_functional_requirements: Excluir Requisitos Funcionais
+  permission_destroy_additional_requirements: Excluir Requisitos Adicionais
+  permission_destroy_non_functional_requirements: Excluir Requisitos Não Funcionais
+  permission_administer_categories_of_non_functional_requirements: Administrar Categorias para Requisitos não Funcional
+  new_category: Nova Categoria
+  view_all_categories: Ver todas Categorias
+  edit_category: Editar Categoria
+  list: "Ver todos %{model}"
+  new: "Novo %{model}"
+  edit: "Editar %{model}"
+  back: voltar
+  required: Obrigatório
+  transit: Transitório
+  confirm: Tem certeza que deseja excluir?
+  destroy: Deletar
+  edit: Editar
+  hidden: Oculto
+  Save: Salvar
+  category: Categoria
+  restriction: Restrição
+  desirable: Desejável
+  name: Nome
+  permanent: Permanente
+  actions: Ações
+  hidden: Oculto
+  evident: Evidente
+  description: Descrição
+  desirable: Desejável
+  NonFunctionalRequirementsAssociated: Requisitos Não Funcionais Associados
+  yes: sim
+  no: não
+  created_on: Criado em
+  update_on: Atualizado em
+
+  field_hidden: Oculto
+  field_restriction: Restrição
+  field_desirable: Desejável
+  field_permanent: Permante
+
+  text_desirable: Marque este campo caso este requisito seja apenas desejável, desmarque-o caso seja obrigatório.
+  text_permanent: Marque este campo caso este requisito seja permanente (nunca sofrerá alterações), desmarque-o caso seja transitório.
+
+  label_categories_for_non_functional_requirements: Categorias para requisitos não funcionais
+
+  helpers:
+     submit:
+       create: "Create a %{model}"
+       update: "Confirm changes to %{model}"
+
