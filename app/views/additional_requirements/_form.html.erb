@@ -1,0 +1,18 @@
+
+  <p> <%= f.select :category_id, Category.find(:all).collect{|category| [category.name,category.id]}, :required => true %>
+    <%=link_to_if_authorized(l('new_category'), {:controller => :categories, :action => :new}, :class => "icon icon-add") %>
+  </p>
+
+ <!--  <p><%= f.collection_select :category_id, Category.find(:all), :id, :name, :required => true %></p> -->
+
+  <p>    <%= f.text_field :name, :size => 61, :required => true%> </p>
+
+  <p>  <%= f.text_area :restriction, :rows => 10, :cols => 70,:class => 'wiki-edit' %> </p>
+
+  <p> <%= f.check_box :desirable %>  <%=t(:text_desirable)%></p>
+
+   <p>    <%= f.check_box :permanent %> <%=t(:text_permanent)%> </p>
+
+
+<%= wikitoolbar_for 'additional_requirement_restriction' %>
+

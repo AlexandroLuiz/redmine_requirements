@@ -1,0 +1,15 @@
+<%=render :partial=>"requirements/nav"%>
+
+<h2><%=t("edit", :model=> t("AdditionalRequirement"))%></h2>
+<% labelled_tabular_form_for :additional_requirement, @additional_requirement, :url => {:controller => 'additional_requirements', :action => 'update', :project_id => @project},
+                             :html => {:multipart => true, :id => 'additional_requirement-form', :class => 'tabular new-additional_requirement-form'} do |f| %>
+    <%= error_messages_for 'functional_requirement' %>
+
+<div id="conteudo">
+<div id="form">
+<%= render :partial => 'form', :locals => { :f => f }%>
+    <%= f.submit l(:button_create) %>
+<% end %>
+</div>
+</div>
+

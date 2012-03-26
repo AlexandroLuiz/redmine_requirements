@@ -1,0 +1,53 @@
+<%=render "requirements/nav"%>
+
+<div id="conteudo">
+<%=render "action_menu"%>
+<h2><%=t :FunctionalRequirement%></h2>
+
+<div id="show">
+<h3><%=h @functional_requirement.name %></h3>
+
+<p>
+  <%=t("hidden")%>/<%=t("evident")%>:
+  <%=evident_or_hidden @functional_requirement.hidden %>
+</p>
+
+<p>
+  <h3><%=t("description")%>:</h3>
+  <%=h @functional_requirement.description %>
+</p>
+<hr/>
+
+<div class="contextual">
+<%= link_to_new NonFunctionalRequirement, {:controller => :non_functional_requirements, :action => :new, :functional_requirement_id => @functional_requirement}, :class => 'icon icon-add' %>
+</div>
+  <h3><%=t ("NonFunctionalRequirementsAssociated")%></h3>
+<div class="autoscroll">
+
+<table>
+   <tr>
+    <th><%=t :name %></th>
+    <th><%=t :desirable %>/<%=t :required %></th>
+    <th><%=t :permanent %>/<%=t :transit %> </th>
+    <th><%=t :category%> </th>
+    <th><%=t("actions")%></th>
+   </tr>
+
+<% @non_functional_requirements.each do |non_functional_requirement| %>
+  <tr>
+    <td><%=link_to non_functional_requirement.name, project_functional_requirement_non_functional_requirement_path(@project,@functional_requirement,non_functional_requirement) %></td>
+    <td><%= desirable_or_required non_functional_requirement.desirable %></td>
+    <td><%= permanent_or_transitional non_functional_requirement.permanent %></td>
+    <td><%= non_functional_requirement.category.name %></td>
+
+    <td> <%= link_to_edit({:controller => 'non_functional_requirements', :action => 'edit', :functional_requirement_id => @functional_requirement, :id => non_functional_requirement}, :accesskey => accesskey(:edit), :class => 'icon icon-edit') %>
+    <%= link_to_destroy({:controller => 'non_functional_requirements', :action => 'destroy', :functional_requirement_id => @functional_requirement, :id => non_functional_requirement}, :confirm => t(:confirm), :method => :delete, :class => "icon icon-del") %></td>
+  </tr>
+<% end %>
+</table>
+</div><p class="pagination"><%= pagination_links_full @non_functional_requirement_pages, @non_functional_requirement_count %></div>
+<% other_formats_links do |f| %>
+<%= f.link_to 'PDF', :url => params %>
+<%end%>
+</div>
+

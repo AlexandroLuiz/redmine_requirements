@@ -1,0 +1,39 @@
+<%=render :partial => "/requirements/nav"%>
+<div id= "conteudo">
+<div class="contextual">
+ <%=link_to_if_authorized(l(:button_add),{:controller => :additional_requirements, :action => :new}, :class => 'icon icon-add') %>
+</div>
+<h2><%= t(:AdditionalRequirements)%></h2>
+<div class="autoscroll">
+<table >
+  <tr>
+    <th><%=t "name" %></th>
+    <th><%=t "desirable" %>/<%=t "required"%></th>
+    <th><%=t "permanent" %>/<%=t "transit"%> </th>
+    <th><%=t "category"%> </th>
+    <th><%=t "created_on"%></th>
+    <th><%=t("actions")%></th>
+   </tr>
+
+   <% @additional_requirements.each do |additional_requirement| %>
+  <tr>
+    <td><%= link_to additional_requirement.name, project_additional_requirement_path(@project,additional_requirement) %></td>
+    <td><%= desirable_or_required  additional_requirement.desirable %></td>
+    <td><%= permanent_or_transitional additional_requirement.permanent%></td>
+    <td><%= additional_requirement.category.name%></td>
+    <td><%= format_date additional_requirement.created_on.to_date%></td>
+    <td> <%= link_to_edit({:controller => 'additional_requirements', :action => 'edit', :id => additional_requirement}, :accesskey => accesskey(:edit), :class => 'icon icon-edit') %>
+    <%= link_to_destroy({:controller => 'additional_requirements', :action => 'destroy', :id => additional_requirement}, :confirm => t(:confirm), :method => :delete, :class => "icon icon-del") %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+
+<p class="pagination"><%= pagination_links_full @additional_requirement_pages, @additional_requirement_count %></p>
+
+<% other_formats_links do |f| %>
+<%= f.link_to 'PDF', :url => params.merge(:key => User.current.rss_key) %>
+<%end%>
+</div>
+

@@ -1,0 +1,14 @@
+
+ <%= error_messages_for 'category' %>
+
+<div class="box">
+  <p>
+     <%= f.text_field :name, :size => 30, :required => true  %>
+  </p>
+  <p>
+     <%= f.text_area :description, :cols => 105, :rows => 10%>
+  </p>
+
+   <%= wikitoolbar_for :category_description%>
+</div>
+

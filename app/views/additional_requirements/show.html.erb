@@ -1,0 +1,23 @@
+<%=render :partial=> "requirements/nav"%>
+
+<div id="conteudo">
+<%=render "action_menu"%>
+
+<h2><%=t "AdditionalRequirement"%></h2>
+
+<div id="show">
+
+  <h3><%=h @additional_requirement.name %></h3>
+
+  <p><%=t "desirable"%>/<%=t "required"%>:  <%= desirable_or_required @additional_requirement.desirable %></p>
+  <p><%=t "permanent"%>/<%=t "transit"%>: <%= permanent_or_transitional @additional_requirement.permanent %></p>
+  <p><%=t "field_category"%>:  <%=h @additional_requirement.category.name %></p>
+
+<p>
+<h3><%=t "restriction"%>:</h3>
+  <%=h @additional_requirement.restriction %>
+</p>
+
+</div>
+</div>
+

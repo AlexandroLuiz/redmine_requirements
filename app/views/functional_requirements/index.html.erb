@@ -1,0 +1,41 @@
+
+<%=render :partial => "/requirements/nav"%>
+
+<div id= "conteudo">
+<div class="contextual">
+ <%=link_to_if_authorized(l(:button_add),{:controller => :functional_requirements, :action => :new}, :class => 'icon icon-add') %>
+</div>
+
+<h2><%= t(:FunctionalRequirements)%></h2>
+
+<div class="autoscroll">
+<table>
+  <tr>
+    <th><%=t "name" %></th>
+    <th><%=t "hidden" %>/<%=t "evident" %> </th>
+    <th><%=t "created_on"%></th>
+    <th><%=t("actions")%></th>
+   </tr>
+
+   <% @functional_requirements.each do |functional_requirement| %>
+  <tr>
+
+    <td><%= link_to functional_requirement.name, project_functional_requirement_path(@project,functional_requirement) %></td>
+    <td><%= evident_or_hidden functional_requirement.hidden %></td>
+    <td><%= format_date(functional_requirement.created_on)%></td>
+    <td> <%= link_to_edit({:controller => 'functional_requirements', :action => 'edit', :id => functional_requirement}, :accesskey => accesskey(:edit), :class => 'icon icon-edit') %>
+    <%= link_to_destroy({:controller => 'functional_requirements', :action => 'destroy', :id => functional_requirement}, :confirm => t(:confirm), :method => :delete, :class => "icon icon-del") %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+
+<p class="pagination"><%= pagination_links_full @functional_requirement_pages, @functional_requirement_count %></p>
+
+<% other_formats_links do |f| %>
+    <%= f.link_to 'PDF' %>
+<% end %>
+
+</div>
+

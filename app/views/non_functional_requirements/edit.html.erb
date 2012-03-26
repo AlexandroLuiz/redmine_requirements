@@ -1,0 +1,16 @@
+<%=render :partial => "requirements/nav"%>
+
+<h2><%=t("edit",:model => t(:NonFunctionalRequirement))%></h2>
+
+<% labelled_tabular_form_for :non_functional_requirement, @non_functional_requirement, :url => {:controller => 'non_functional_requirements', :action => 'update', :project_id => @project ,:functional_requirement_id => @functional_requirement},
+                             :html => {:method => :put,:multipart => true, :id => 'non_functional_requirement-form', :class => 'tabular new-non_functional_requirement-form'} do |f| %>
+    <%= error_messages_for 'non_functional_requirement' %>
+
+<div id="conteudo">
+<div id="form">
+<%= render :partial => 'form', :locals => { :f => f }%>
+    <%= f.submit l(:button_update) %>
+<% end %>
+</div>
+</div>
+

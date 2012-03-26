@@ -1,0 +1,27 @@
+  <div id="navegacaoLocal">
+
+   <div id="navegacaoLocalRequisitos">
+   <h3> <%= link_to_if_authorized(l(:FunctionalRequirements), {:controller => 'functional_requirements', :action => 'index' }, :accesskey => accesskey(:index)) %></h3>
+   <p> <%= link_to_list FunctionalRequirement, {:controller => 'functional_requirements', :action => 'index' }, :accesskey => accesskey(:index)%></p>
+   <p> <%= link_to_new FunctionalRequirement, {:controller => 'functional_requirements', :action => 'new' }, :accesskey => accesskey(:new)%></p>
+   </div>
+
+
+   <div id="navegacaoLocalRequisitos">
+   <h3> <%= link_to_if_authorized t(:AdditionalRequirements), {:controller => :additional_requirements, :action => :index}, :accesskey => accesskey(:index)%></h3>
+   <p> <%= link_to_list AdditionalRequirement, {:controller => :additional_requirements, :action => :index},:accesskey => accesskey(:index)%></p>
+   <p> <%= link_to_new AdditionalRequirement, {:controller => :additional_requirements, :action => :new}, :accesskey => accesskey(:new)%></p>
+   </div>
+   <div id="navegacaoLocalRequisitos">
+   <h3> <%= link_to_if_authorized t(:label_categories_for_non_functional_requirements), {:controller => :categories, :action => :index}, :accesskey => accesskey(:index)%></h3>
+   <p> <%= link_to_list Category, {:controller => :categories, :action => :index},:accesskey => accesskey(:index)%></p>
+   <p> <%= link_to_new Category, {:controller => :categories, :action => :new}, :accesskey => accesskey(:new)%></p>
+   </div>
+  </div>
+
+<% html_title "Requisitos" -%>
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'style', :plugin => 'redmine_requirements' %>
+    <%= stylesheet_link_tag 'admin', :plugin => 'redmine_requirements' %>
+<% end %>
+

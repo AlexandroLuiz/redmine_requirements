@@ -1,0 +1,22 @@
+<%=render "requirements/nav"%>
+
+<div id="conteudo">
+<%=render :partial => "action_menu"%>
+<h2><%=t :NonFunctionalRequirement%> </h2>
+
+
+<div id="show">
+<h3><%=h @non_functional_requirement.functional_requirement.name.capitalize %> >> <%=h @non_functional_requirement.name.capitalize %></h3>
+
+
+  <p><%=l :desirable%>/<%=l :required%>: <%=h desirable_or_required @non_functional_requirement.desirable %></p>
+  <p><%=l :permanent%>/<%=l :transit%>: <%=h permanent_or_transitional @non_functional_requirement.permanent %></p>
+  <p> <%=l :category%>: <%=h @non_functional_requirement.category.name %></p>
+<p>
+  <h3><%=l :restriction%>:</h3>
+  <%=h @non_functional_requirement.restriction %>
+</p>
+</div>
+
+</div>
+

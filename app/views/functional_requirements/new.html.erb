@@ -1,0 +1,16 @@
+<%=render "requirements/nav"%>
+
+<h2><%=t("new",:model => t(:FunctionalRequirement))%></h2>
+
+<% labelled_tabular_form_for :functional_requirement, @functional_requirement, :url => {:controller => 'functional_requirements', :action => 'create', :project_id => @project},
+                             :html => {:multipart => true, :id => 'functional_requirement-form', :class => 'tabular new-functional_requirement-form'} do |f| %>
+    <%= error_messages_for 'functional_requirement' %>
+
+<div id="conteudo">
+<div id="form">
+<%=render :partial => "functional_requirements/form", :locals => {:f => f}%>
+<%= f.submit l(:button_create) %>
+<% end %>
+</div>
+</div>
+

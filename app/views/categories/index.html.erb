@@ -1,0 +1,24 @@
+<%=render :partial => "requirements/nav"%>
+
+<div id="conteudo">
+<div class="contextual"><%= link_to_if_authorized(l(:button_add), {:controller => :categories, :action => :new}, :class => 'icon icon-add') %></div>
+<h2><%=t :Categories%></h2>
+<table>
+  <tr>
+    <th><%=t :name%></th>
+    <th><%=t :actions%></th>
+    </tr>
+
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= link_to category.name, project_category_path (@project,category)%></td>
+    <td><%= link_to_edit({:controller => :categories, :action => :edit, :id => category}, :class => 'icon icon-edit') %>
+    <%= link_to_destroy({:controller => :categories, :action => :destroy, :id => category}, :method => :delete, :confirm => t(:confirm), :class => 'icon icon-del')%></td>
+<% end %>
+</table>
+
+<br />
+
+
+</div>
+
