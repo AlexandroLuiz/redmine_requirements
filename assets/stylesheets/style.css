@@ -1,0 +1,90 @@
+#navegacaoLocal{
+	background: #eeeeee;
+	width: 23%;
+	height:430px;
+	margin:-10px -10px 0 0;
+	padding: 10px 0 0 10px;
+    float: right;
+    border-left: 1px solid #bbbbbb;
+}
+#navegacaoLocalRequisitos{
+	width: 95%;
+	height:120px;
+	margin:0 0 0 0;
+	}
+
+#conteudo{
+    width: 75%;
+}
+
+#conteudo #form{
+     background: #F5F5F5;
+     padding:10px 10px 10px 10px;
+}
+#conteudo #show{
+     background: #ffffdd;
+     padding:10px 10px 10px 10px;
+     border-bottom: 1px solid #DCDCDC;
+    }
+#conteudo #show .field{
+     border-bottom: 1px solid #DCDCDC;
+}
+
+p.ajuda{
+   color: #CDC5BF;
+
+}
+
+table { width: 100%; border: 1px solid #dddddd;   float: left;  text-align: center;   border-collapse: collapse; white-space: normal; }
+
+table th{
+background-color:#EEEEEE; padding: 4px;
+}
+
+
+
+table tr td{background: #f6f7f8; padding: 3px;}
+
+table tr:nth-child(odd) td {
+  background: #f6f7f8;
+
+}
+
+table tr:nth-child(even) td{
+  background: #e4e4e4;
+}
+
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.green        { color: green; }
+.red          { color: red; }
+
