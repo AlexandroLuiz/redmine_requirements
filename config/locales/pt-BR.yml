@@ -21,6 +21,7 @@ pt-BR:
   permission_destroy_additional_requirements: Excluir Requisitos Adicionais
   permission_destroy_non_functional_requirements: Excluir Requisitos Não Funcionais
   permission_administer_categories_of_non_functional_requirements: Administrar Categorias para Requisitos não Funcional
+  permission_move_functional_requirements: Mover Requisitos Funcionais
   new_category: Nova Categoria
   view_all_categories: Ver todas Categorias
   edit_category: Editar Categoria

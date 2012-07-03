@@ -6,8 +6,8 @@ Redmine::Plugin.register :redmine_requirements do
    author 'Alexandro Luiz Hilleshein'
    description 'This is a plugin for Redmine for controller of Requirements'
    version '0.0.1'
-   url 'http://example.com/path/to/plugin'
-   author_url 'http://example.com/about'
+   url 'http://'
+   author_url 'http://'
 
    project_module :requirements do
      permission :view_functional_requirements, :functional_requirements => [:index, :show]
@@ -20,6 +20,7 @@ Redmine::Plugin.register :redmine_requirements do
      permission :destroy_additional_requirements, :additional_requirements => [:destroy]
      permission :destroy_non_functional_requirements, :non_functional_requirements => [:destroy]
      permission :administer_categories_of_non_functional_requirements, :categories => [:index, :show, :new, :edit, :destroy]
+     permission :move_functional_requirements, :functional_requirements => [:move]
      permission :requirements, {:requirements => [:index]}, :public => true
      menu :project_menu, :requirements, { :controller => 'requirements', :action => 'index' }, :caption => 'Requisitos', :after => :activity, :param => :project_id
 

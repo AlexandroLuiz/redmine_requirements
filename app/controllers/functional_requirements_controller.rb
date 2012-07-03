@@ -1,12 +1,12 @@
 class FunctionalRequirementsController < ApplicationController
   unloadable
 
-  layout 'base'
-  menu_item :requirements
+ layout 'base'
+ menu_item :requirements
  #filter the current project
  before_filter :current_project
  #filtro para analizar as permições para o metodo index
-  before_filter :authorize, :only => [:index, :show, :new, :edit, :destroy ]
+ before_filter :authorize, :only => [:index, :show, :new, :edit, :destroy, :move ]
 
   require 'pdf_helper'
   include PDFHelper
@@ -100,6 +100,19 @@ class FunctionalRequirementsController < ApplicationController
       format.html { redirect_to(project_functional_requirements_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def move
+    @functional_requirement = FunctionalRequirement.find(params[:id])
+    @issue = Issue.new
+    @issue.subject = @functional_requirement.name
+    @issue.description = @functional_requirement.description
+    @issue.project_id = @functional_requirement.project_id
+
+    @issue.save
+
+    redirect_to({:controller => 'issue_moves', :action => 'new', :id => @issue})
+
   end
 
 

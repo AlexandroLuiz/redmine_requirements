@@ -1,7 +1,7 @@
 <div class="contextual">
 <%= link_to_if_authorized(l(:button_update), {:controller => 'functional_requirements', :action => 'edit', :id => @functional_requirement }, :class => 'icon icon-edit', :accesskey => accesskey(:edit)) %>
 
-<%= link_to_if_authorized l(:button_move), {:controller => 'functional_requirements', :action => 'move', :id => @functional_requirement}, :class => 'icon icon-move' %>
+<!--<%= link_to_if_authorized l(:button_move), {:controller => 'functional_requirements', :action => 'move', :project_id => @project, :id => @functional_requirement}, :class => 'icon icon-move' %>-->
 
 <%= link_to_if_authorized l(:button_delete), {:controller => 'functional_requirements', :action => 'destroy', :id => @functional_requirement},:method => :delete, :class => 'icon icon-del' %>
 </div>

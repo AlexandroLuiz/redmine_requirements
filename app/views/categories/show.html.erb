@@ -1,13 +1,14 @@
-<p>
-  <b>Name:</b>
-  <%=h @category.name %>
+<%=render :partial => "requirements/nav"%>
+
+<div id="conteudo">
+
+
+<h3>  <%=h @category.name %></h3>
+<div id="show">
+
+  <b><%=t('description')%>:</b>
+ <p> <%=h @category.description %>
 </p>
+</div>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%=h @category.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
