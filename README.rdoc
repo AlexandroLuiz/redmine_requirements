@@ -1,4 +1,4 @@
-É proposto o desenvolvimento de um plugin para o Redmine a fim de gerenciar requisitos de software. O objetivo do plugin é facilitar o processo de gerenciamento de requisitos, possibilitando um maior controle e organização das informações por parte da gerência do projeto. O plugin deve possibilitar o cadastro, alteração e exclusão dos requisitos adicionais, funcionais e não funcionais. Devem existir telas de listagem dos requisitos funcionais e adicionais por projeto, e também de requisitos não funcionais associados a requisitos funcionais, possibilitando a exportação para formato PDF.
+
 
 == Requirements Plugin 0.1 Beta
 
