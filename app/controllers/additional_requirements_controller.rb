@@ -11,7 +11,7 @@ class AdditionalRequirementsController < ApplicationController
   # GET /additional_requirements
   # GET /additional_requirements.xml
   def index
-    @additional_requirements = AdditionalRequirement.all
+    @additional_requirements = AdditionalRequirement.find_all_by_project_id(:project_id)
 
     @additional_requirement_count = @additional_requirements.size
     @additional_requirement_pages = Paginator.new self, @additional_requirement_count, per_page_option, params['page']
