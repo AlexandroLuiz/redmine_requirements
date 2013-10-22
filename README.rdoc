@@ -6,7 +6,7 @@ Author::  Alexandro Luiz Hilleshein <alexandro_bito@hotmail.com>
 
 Requires::	Redmine 1.2
 
-License::	Copyright (c) 2012 Alexandro Luiz Hilleshein. Licença GPL 2.0.
+License::	Copyleft 2012 Alexandro Luiz Hilleshein. Licença GPL 2.0.
 
 Instalação
 
